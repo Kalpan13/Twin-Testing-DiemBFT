@@ -1,0 +1,12 @@
+Timestamp: 2021-12-04 18:23:02.700104 | ProcessId: ViolationChecker | DEBUG: Violation Checker Started.. |
+Timestamp: 2021-12-04 18:23:02.749013 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:da806> |
+Timestamp: 2021-12-04 18:23:02.757070 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:da804> |
+Timestamp: 2021-12-04 18:23:02.758032 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:da807> |
+Timestamp: 2021-12-04 18:23:02.766138 | ProcessId: ViolationChecker | DEBUG: Received Response for 3 from validator : <ValidatorFI:da806> |
+Timestamp: 2021-12-04 18:23:02.779920 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:da805> |
+Timestamp: 2021-12-04 18:23:02.781272 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:da805> |
+Timestamp: 2021-12-04 18:23:02.785365 | ProcessId: ViolationChecker | DEBUG: Received Response for 3 from validator : <ValidatorFI:da804> |
+Timestamp: 2021-12-04 18:23:02.798779 | ProcessId: ViolationChecker | DEBUG: Received Response for 4 from validator : <ValidatorFI:da803> |
+Timestamp: 2021-12-04 18:23:02.798850 | ProcessId: ViolationChecker | DEBUG: Safety Violated for ledger length 1 at validator : <ValidatorFI:da803> |
+Timestamp: 2021-12-04 18:23:02.798940 | ProcessId: ViolationChecker | DEBUG: Safety Violated |
+Timestamp: 2021-12-04 18:23:02.800698 | ProcessId: ViolationChecker | DEBUG: Received Done from Parent |

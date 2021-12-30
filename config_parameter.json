@@ -1,0 +1,14 @@
+
+{
+  "nreplicas":7,
+  "ntwins":2,
+  "npartitions":2,
+  "nrounds":4,
+  "deterministic":false,
+  "onlyfaultyleaders":false,
+  "maxpartitionsConfigs":10,
+  "onlyProgressivePartitionConfigs":true,
+  "message_types_to_drop":[],
+  "message_type_drop_probability":0,
+  "timeout_msg_drop_cnt":0
+}

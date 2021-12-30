@@ -1,0 +1,21 @@
+Timestamp: 2021-12-01 21:10:50.847052 | ProcessId: ViolationChecker | DEBUG: Violation Checker Started.. |
+Timestamp: 2021-12-01 21:10:50.883842 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:bcc06> |
+Timestamp: 2021-12-01 21:10:50.890710 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:bcc05> |
+Timestamp: 2021-12-01 21:10:50.892292 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:bcc03> |
+Timestamp: 2021-12-01 21:10:50.895374 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:bcc04> |
+Timestamp: 2021-12-01 21:10:50.904268 | ProcessId: ViolationChecker | DEBUG: Received Response for 3 from validator : <ValidatorFI:bcc06> |
+Timestamp: 2021-12-01 21:10:50.909113 | ProcessId: ViolationChecker | DEBUG: Received Response for 3 from validator : <ValidatorFI:bcc04> |
+Timestamp: 2021-12-01 21:10:50.909842 | ProcessId: ViolationChecker | DEBUG: Received Response for 3 from validator : <ValidatorFI:bcc05> |
+Timestamp: 2021-12-01 21:10:50.911035 | ProcessId: ViolationChecker | DEBUG: Received Response for 3 from validator : <ValidatorFI:bcc03> |
+Timestamp: 2021-12-01 21:10:50.925657 | ProcessId: ViolationChecker | DEBUG: Received Response for 4 from validator : <ValidatorFI:bcc06> |
+Timestamp: 2021-12-01 21:10:50.925987 | ProcessId: ViolationChecker | DEBUG: Received Response for 4 from validator : <ValidatorFI:bcc07> |
+Timestamp: 2021-12-01 21:10:50.932453 | ProcessId: ViolationChecker | DEBUG: Received Response for 4 from validator : <ValidatorFI:bcc03> |
+Timestamp: 2021-12-01 21:10:50.933448 | ProcessId: ViolationChecker | DEBUG: Received Response for 4 from validator : <ValidatorFI:bcc04> |
+Timestamp: 2021-12-01 21:10:50.936509 | ProcessId: ViolationChecker | DEBUG: Received Response for 4 from validator : <ValidatorFI:bcc05> |
+Timestamp: 2021-12-01 21:10:50.941715 | ProcessId: ViolationChecker | DEBUG: Received Response for 5 from validator : <ValidatorFI:bcc04> |
+Timestamp: 2021-12-01 21:10:50.947661 | ProcessId: ViolationChecker | DEBUG: Received Response for 5 from validator : <ValidatorFI:bcc06> |
+Timestamp: 2021-12-01 21:10:50.948331 | ProcessId: ViolationChecker | DEBUG: Received Response for 5 from validator : <ValidatorFI:bcc03> |
+Timestamp: 2021-12-01 21:10:50.955179 | ProcessId: ViolationChecker | DEBUG: Received Response for 6 from validator : <ValidatorFI:bcc04> |
+Timestamp: 2021-12-01 21:10:50.960959 | ProcessId: ViolationChecker | DEBUG: Received Response for 6 from validator : <ValidatorFI:bcc06> |
+Timestamp: 2021-12-01 21:10:50.961145 | ProcessId: ViolationChecker | DEBUG: Received Response for 6 from validator : <ValidatorFI:bcc03> |
+Timestamp: 2021-12-01 21:10:50.965500 | ProcessId: ViolationChecker | DEBUG: Received Done from Parent |

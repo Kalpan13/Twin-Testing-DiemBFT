@@ -1,0 +1,9 @@
+Timestamp: 2021-12-01 21:49:29.735259 | ProcessId: ViolationChecker | DEBUG: Violation Checker Started.. |
+Timestamp: 2021-12-01 21:49:37.784772 | ProcessId: ViolationChecker | DEBUG: Received Response for 3 from validator : <ValidatorFI:6c005> |
+Timestamp: 2021-12-01 21:49:37.785613 | ProcessId: ViolationChecker | DEBUG: Received Response for 3 from validator : <ValidatorFI:6c007> |
+Timestamp: 2021-12-01 21:49:37.792734 | ProcessId: ViolationChecker | DEBUG: Received Response for 3 from validator : <ValidatorFI:6c004> |
+Timestamp: 2021-12-01 21:49:37.795805 | ProcessId: ViolationChecker | DEBUG: Received Response for 3 from validator : <ValidatorFI:6c006> |
+Timestamp: 2021-12-01 21:49:37.796820 | ProcessId: ViolationChecker | DEBUG: Received Response for 3 from validator : <ValidatorFI:6c003> |
+Timestamp: 2021-12-01 21:49:37.804639 | ProcessId: ViolationChecker | DEBUG: Received Response for 4 from validator : <ValidatorFI:6c006> |
+Timestamp: 2021-12-01 21:49:37.810275 | ProcessId: ViolationChecker | DEBUG: Received Response for 4 from validator : <ValidatorFI:6c005> |
+Timestamp: 2021-12-01 21:49:37.811533 | ProcessId: ViolationChecker | DEBUG: Received Response for 4 from validator : <ValidatorFI:6c004> |

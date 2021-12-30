@@ -1,0 +1,15 @@
+Timestamp: 2021-12-04 18:30:01.902287 | ProcessId: ViolationChecker | DEBUG: Violation Checker Started.. |
+Timestamp: 2021-12-04 18:30:01.960545 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:df006> |
+Timestamp: 2021-12-04 18:30:01.967422 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:df003> |
+Timestamp: 2021-12-04 18:30:01.968168 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:df005> |
+Timestamp: 2021-12-04 18:30:01.970664 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:df004> |
+Timestamp: 2021-12-04 18:30:01.980068 | ProcessId: ViolationChecker | DEBUG: Received Response for 3 from validator : <ValidatorFI:df006> |
+Timestamp: 2021-12-04 18:30:01.988392 | ProcessId: ViolationChecker | DEBUG: Received Response for 3 from validator : <ValidatorFI:df005> |
+Timestamp: 2021-12-04 18:30:01.988907 | ProcessId: ViolationChecker | DEBUG: Received Response for 3 from validator : <ValidatorFI:df004> |
+Timestamp: 2021-12-04 18:30:01.996203 | ProcessId: ViolationChecker | DEBUG: Received Response for 4 from validator : <ValidatorFI:df006> |
+Timestamp: 2021-12-04 18:30:02.003240 | ProcessId: ViolationChecker | DEBUG: Received Response for 4 from validator : <ValidatorFI:df005> |
+Timestamp: 2021-12-04 18:30:02.003749 | ProcessId: ViolationChecker | DEBUG: Received Response for 4 from validator : <ValidatorFI:df004> |
+Timestamp: 2021-12-04 18:30:02.019000 | ProcessId: ViolationChecker | DEBUG: Received Response for 5 from validator : <ValidatorFI:df006> |
+Timestamp: 2021-12-04 18:30:02.025554 | ProcessId: ViolationChecker | DEBUG: Received Response for 5 from validator : <ValidatorFI:df005> |
+Timestamp: 2021-12-04 18:30:02.026763 | ProcessId: ViolationChecker | DEBUG: Received Response for 5 from validator : <ValidatorFI:df004> |
+Timestamp: 2021-12-04 18:30:02.032873 | ProcessId: ViolationChecker | DEBUG: Received Done from Parent |

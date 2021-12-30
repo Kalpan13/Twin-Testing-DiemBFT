@@ -1,0 +1,7 @@
+Timestamp: 2021-12-04 18:45:50.026288 | ProcessId: client_0 | Action: Initial configuration | Object: {'liveness_timeout_count': 7, 'nvalidators': 7, 'nfaulty': 2, 'nclients': 1, 'nclientops': 2, 'sleeptime': 1, 'clienttimeout': 15, 'delta': 2, 'window_size': 5, 'exclude_size': 0, 'failure_config': FailureConfig(failures=[], seed=637713655)} |
+Timestamp: 2021-12-04 18:45:50.054078 | ProcessId: client_0 | Event: Sent | MsgType: Request | To: ALL validators | Msg: {'req_id': '0_0', 'command': '0-0'}
+Timestamp: 2021-12-04 18:45:50.057616 | ProcessId: client_0 | Event: Sent | MsgType: Request | To: ALL validators | Msg: {'req_id': '0_1', 'command': '0-1'}
+Timestamp: 2021-12-04 18:46:05.055665 | ProcessId: client_0 | Action: Retransmitting Request | Object: {'req_id': '0_0', 'command': '0-0'} |
+Timestamp: 2021-12-04 18:46:05.058095 | ProcessId: client_0 | Event: Sent | MsgType: Request | To: ALL validators | Msg: {'req_id': '0_0', 'command': '0-0'}
+Timestamp: 2021-12-04 18:46:05.059695 | ProcessId: client_0 | Action: Retransmitting Request | Object: {'req_id': '0_1', 'command': '0-1'} |
+Timestamp: 2021-12-04 18:46:05.061381 | ProcessId: client_0 | Event: Sent | MsgType: Request | To: ALL validators | Msg: {'req_id': '0_1', 'command': '0-1'}

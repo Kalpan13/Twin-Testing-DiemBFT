@@ -1,0 +1,14 @@
+{"round_configs":
+  {
+"1": {"leader": ["D"], "partitions": [["D", "A"], ["B","C","A'"]], "MsgType":"Vote"},
+"2": {"leader": ["D"], "partitions": [["D", "A"], ["B","C","A'"]]},
+"3": {"leader": ["B"], "partitions": [["D", "A'"],["B","C","A"]]},
+"4": {"leader": ["B"], "partitions": [["D", "A'"],["B","C","A"]]},
+"5": {"leader": ["B"], "partitions": [["D", "A'"],["B","C","A"]]}
+   },
+  "timeout_msg_drop_cnt": 0,
+  "no_of_twins": 1,
+  "no_of_rounds": 6,
+  "no_of_replicas": 4
+} 
+

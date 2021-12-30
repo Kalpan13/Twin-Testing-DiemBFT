@@ -1,0 +1,23 @@
+Timestamp: 2021-12-04 18:34:32.624937 | ProcessId: validator_2 | Action: Initial configuration | Object: {'liveness_timeout_count': 7, 'nvalidators': 4, 'nfaulty': 1, 'nclients': 1, 'nclientops': 4, 'sleeptime': 1, 'clienttimeout': 15, 'delta': 2, 'window_size': 5, 'exclude_size': 0, 'failure_config': FailureConfig(failures=[], seed=637713655)} |
+Timestamp: 2021-12-04 18:34:32.654450 | ProcessId: validator_2 | Event: Received | MsgType: Request | From: client_0 | Msg: {'req_id': '0_0', 'command': '0-0'}
+Timestamp: 2021-12-04 18:34:32.657233 | ProcessId: validator_2 | Event: Received | MsgType: Request | From: client_0 | Msg: {'req_id': '0_1', 'command': '0-1'}
+Timestamp: 2021-12-04 18:34:32.658524 | ProcessId: validator_2 | Event: Received | MsgType: Request | From: client_0 | Msg: {'req_id': '0_2', 'command': '0-2'}
+Timestamp: 2021-12-04 18:34:32.660961 | ProcessId: validator_2 | Event: Received | MsgType: Request | From: client_0 | Msg: {'req_id': '0_3', 'command': '0-3'}
+Timestamp: 2021-12-04 18:34:40.649038 | ProcessId: validator_2 | Action: Local Timeout occurred | Object: {'round': 1, 'high_qc': None, 'author': 2, 'author_signature': {}} |
+Timestamp: 2021-12-04 18:34:40.650710 | ProcessId: validator_2 | Event: Sent | MsgType: Timeout | To: ALL validators | Msg: {'tmo_info': {'round': 1, 'high_qc': None, 'author': 2, 'author_signature': {}}, 'last_round_tc': None, 'high_commit_qc': None}
+Timestamp: 2021-12-04 18:34:40.658620 | ProcessId: validator_2 | Event: Received | MsgType: Timeout | From: validator_1 | Msg: {'tmo_info': {'round': 1, 'high_qc': None, 'author': 1, 'author_signature': {}}, 'last_round_tc': None, 'high_commit_qc': None}
+Timestamp: 2021-12-04 18:34:40.658951 | ProcessId: validator_2 | Action: Verified TimeoutMsg signature | Object: True |
+Timestamp: 2021-12-04 18:34:40.660001 | ProcessId: validator_2 | Event: Received | MsgType: Timeout | From: validator_2 | Msg: {'tmo_info': {'round': 1, 'high_qc': None, 'author': 2, 'author_signature': {}}, 'last_round_tc': None, 'high_commit_qc': None}
+Timestamp: 2021-12-04 18:34:40.660314 | ProcessId: validator_2 | Action: Verified TimeoutMsg signature | Object: True |
+Timestamp: 2021-12-04 18:34:40.660863 | ProcessId: validator_2 | Action: Local Timeout occurred | Object: {'round': 1, 'high_qc': None, 'author': 2, 'author_signature': {}} |
+Timestamp: 2021-12-04 18:34:40.661414 | ProcessId: validator_2 | Event: Sent | MsgType: Timeout | To: ALL validators | Msg: {'tmo_info': {'round': 1, 'high_qc': None, 'author': 2, 'author_signature': {}}, 'last_round_tc': None, 'high_commit_qc': None}
+Timestamp: 2021-12-04 18:34:40.664638 | ProcessId: validator_2 | Event: Received | MsgType: Timeout | From: validator_0 | Msg: {'tmo_info': {'round': 1, 'high_qc': None, 'author': 0, 'author_signature': {}}, 'last_round_tc': None, 'high_commit_qc': None}
+Timestamp: 2021-12-04 18:34:40.664835 | ProcessId: validator_2 | Action: Verified TimeoutMsg signature | Object: True |
+Timestamp: 2021-12-04 18:34:40.665066 | ProcessId: validator_2 | Action: Generated a Timeout Certificate | Object: {'round': 1, 'tmo_high_qc_rounds': [0, 0, 0], 'tmo_signatures': [{}, {}, {}], 'tmo_signers': [1, 2, 0], 'author': 2, 'author_signature': {}} |
+Timestamp: 2021-12-04 18:34:40.666136 | ProcessId: validator_2 | Action: Advancing to round due to TC | Object: 2 |
+Timestamp: 2021-12-04 18:34:40.666669 | ProcessId: validator_2 | Event: Received | MsgType: Timeout | From: validator_2 | Msg: {'tmo_info': {'round': 1, 'high_qc': None, 'author': 2, 'author_signature': {}}, 'last_round_tc': None, 'high_commit_qc': None}
+Timestamp: 2021-12-04 18:34:40.667343 | ProcessId: validator_2 | Action: Verified TimeoutMsg signature | Object: True |
+Timestamp: 2021-12-04 18:34:40.667783 | ProcessId: validator_2 | Event: Received | MsgType: Timeout | From: validator_0 | Msg: {'tmo_info': {'round': 1, 'high_qc': None, 'author': 0, 'author_signature': {}}, 'last_round_tc': None, 'high_commit_qc': None}
+Timestamp: 2021-12-04 18:34:40.668143 | ProcessId: validator_2 | Action: Verified TimeoutMsg signature | Object: True |
+Timestamp: 2021-12-04 18:34:40.671373 | ProcessId: validator_2 | Event: Received | MsgType: Timeout | From: validator_1 | Msg: {'tmo_info': {'round': 1, 'high_qc': None, 'author': 1, 'author_signature': {}}, 'last_round_tc': None, 'high_commit_qc': None}
+Timestamp: 2021-12-04 18:34:40.671655 | ProcessId: validator_2 | Action: Verified TimeoutMsg signature | Object: True |

@@ -1,0 +1,9 @@
+Timestamp: 2021-12-01 21:14:51.796499 | ProcessId: ViolationChecker | DEBUG: Violation Checker Started.. |
+Timestamp: 2021-12-01 21:14:51.847600 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:1e804> |
+Timestamp: 2021-12-01 21:14:51.849409 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:1e807> |
+Timestamp: 2021-12-01 21:14:51.854004 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:1e806> |
+Timestamp: 2021-12-01 21:14:51.855172 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:1e803> |
+Timestamp: 2021-12-01 21:14:51.859057 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:1e805> |
+Timestamp: 2021-12-01 21:14:51.859177 | ProcessId: ViolationChecker | DEBUG: Safety Violated for ledger length 1 at validator : <ValidatorFI:1e805> |
+Timestamp: 2021-12-01 21:14:51.859264 | ProcessId: ViolationChecker | DEBUG: Safety Violated |
+Timestamp: 2021-12-01 21:14:51.861293 | ProcessId: ViolationChecker | DEBUG: Received Done from Parent |

@@ -1,0 +1,3 @@
+Timestamp: 2021-12-04 18:49:39.918968 | ProcessId: ViolationChecker | DEBUG: Violation Checker Started.. |
+Timestamp: 2021-12-04 18:49:53.919941 | ProcessId: ViolationChecker | DEBUG: Liveness Violated |
+Timestamp: 2021-12-04 18:49:53.922430 | ProcessId: ViolationChecker | DEBUG: Received Done from Parent |

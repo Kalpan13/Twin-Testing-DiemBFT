@@ -1,0 +1,10 @@
+Timestamp: 2021-12-04 18:30:49.915691 | ProcessId: ViolationChecker | DEBUG: Violation Checker Started.. |
+Timestamp: 2021-12-04 18:30:49.965832 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:c1c06> |
+Timestamp: 2021-12-04 18:30:49.975305 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:c1c03> |
+Timestamp: 2021-12-04 18:30:49.975541 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:c1c04> |
+Timestamp: 2021-12-04 18:30:49.976182 | ProcessId: ViolationChecker | DEBUG: Received Response for 2 from validator : <ValidatorFI:c1c05> |
+Timestamp: 2021-12-04 18:30:49.984332 | ProcessId: ViolationChecker | DEBUG: Received Response for 3 from validator : <ValidatorFI:c1c06> |
+Timestamp: 2021-12-04 18:30:49.990555 | ProcessId: ViolationChecker | DEBUG: Received Response for 3 from validator : <ValidatorFI:c1c05> |
+Timestamp: 2021-12-04 18:30:49.991564 | ProcessId: ViolationChecker | DEBUG: Received Response for 3 from validator : <ValidatorFI:c1c04> |
+Timestamp: 2021-12-04 18:31:03.992199 | ProcessId: ViolationChecker | DEBUG: Liveness Violated |
+Timestamp: 2021-12-04 18:31:03.995570 | ProcessId: ViolationChecker | DEBUG: Received Done from Parent |

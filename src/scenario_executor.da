@@ -1,0 +1,190 @@
+import os
+import shutil
+import sys
+import json
+sys.path.append('../config')
+from client import Client
+from config import configs
+from cryptography import Cryptography
+from validator import ValidatorFI
+from network_playground import NetworkPlayground
+from violation_checker import ViolationChecker
+import time
+from logger_util import LOGGER
+
+class ScenarioExecutor(process):
+
+    def setup(config, config_id, LOGGER):
+        self.config = config
+        self.nvalidators = int(config['nvalidators'])
+        self.nclients = int(config['nclients'])
+        self.nfaulty = int(config['nfaulty'])
+        self.validators = None
+        self.twins = None
+        self.clients = None
+        self.nw_playground = None
+        self.violation_checker = None
+        
+    def run():
+
+        twin_config = {}
+        with open("../twins_config.json") as f:
+            twin_configs = json.load(f)
+            if isinstance(twin_config,list):
+                twin_config = twin_configs[0]
+            else:
+                twin_config = twin_configs
+
+        no_of_twins = twin_config["no_of_twins"]
+        no_of_rounds = twin_config["no_of_rounds"]
+        no_of_replicas = twin_config["no_of_replicas"]
+        
+        config["nclientops"] = no_of_rounds - 2
+        private_keys_validators = {}
+        public_keys_validators = {}
+        private_keys_twins = {}
+        public_keys_twins = {}
+        private_keys_clients = {}
+        public_keys_clients = {}
+
+        os.makedirs('../logs/config' + str(config_id))
+        os.makedirs('../ledgers/config' + str(config_id))
+        
+        validators = new(ValidatorFI, num=no_of_replicas)
+        twins = new(ValidatorFI, num = no_of_twins)
+        clients = new(Client, num=nclients)
+        nw_playground = new(NetworkPlayground, num=1)
+        violation_checker = new(ViolationChecker, num=1)
+
+        validators_list = list(validators)
+        twins_list = list(twins)
+
+        parsed_config = parse_config(twin_config, validators_list, twins_list)
+        LOGGER.debug(parsed_config)
+
+        twins_mappings = {}  # <Twin, Process>
+
+        for i in range(0,no_of_twins):
+            twins_mappings[twins_list[i]] = validators_list[i]
+
+        for v in validators:
+            private_key, public_key = Cryptography.generate_key()
+            private_keys_validators[v] = private_key
+            public_keys_validators[v] = public_key
+
+        for c in clients:
+            private_key, public_key = Cryptography.generate_key()
+            private_keys_clients[c] = private_key
+            public_keys_clients[c] = public_key
+
+        setup(nw_playground, (list(validators), config_id, parsed_config, twins_mappings))
+
+        for i, v in enumerate(validators):
+            setup({v}, (config, config_id, i, list(validators), list(clients),
+                        private_keys_validators[v], public_keys_validators, public_keys_clients, 
+                            nw_playground, parsed_config, violation_checker, no_of_rounds))
+
+        for i, c in enumerate(clients):
+            setup({c}, (config, config_id, i, list(validators),
+                        private_keys_clients[c], public_keys_validators, twins_list))
+        
+        for i, t in enumerate(twins):
+            setup({t}, (config, config_id, i, list(validators), list(clients),
+                        private_keys_validators[twins_mappings[t]], public_keys_validators, 
+                            public_keys_clients, nw_playground, parsed_config, violation_checker, no_of_rounds, twins_mappings[t]))
+
+        setup(violation_checker, (validators_list, twins_mappings, no_of_rounds, config_id, config["liveness_timeout_count"] * config["delta"]))
+        start(violation_checker)
+        start(nw_playground)
+        start(validators)
+        start(twins)
+        start(clients)
+        
+        await(each(c in clients, has=received(('Done',), from_=c)))
+        output("All clients done, informing all validators.", config_id)
+        send(('Done',), to=(list(validators)+list(twins)))
+        send(('Done',), to=nw_playground)
+        print(f"Sending done to : {violation_checker}")
+        send(('Done',), to=violation_checker)
+        send(('Done',), to=parent())
+        
+    def parse_config(twin_config, validators_list, twins_list):
+        parsed_config = {}
+        parsed_config["no_of_twins"] = twin_config["no_of_twins"]
+        parsed_config["no_of_rounds"] = twin_config["no_of_rounds"]
+        parsed_config["no_of_replicas"] = twin_config["no_of_replicas"]
+        parsed_config["timeout_msg_drop_cnt"] = twin_config["timeout_msg_drop_cnt"]
+        parsed_config["round_configs"] = {}
+        for round_num in twin_config["round_configs"]:
+            parsed_partitions = []
+            for partition in twin_config["round_configs"][round_num]["partitions"]:
+                parsed_partition = []
+                for process in partition:
+                    if '\'' in process: # Twin Process
+                        parsed_partition.append(twins_list[ord(process[0])-ord('A')])
+                    else:
+                        parsed_partition.append(validators_list[ord(process)-ord('A')])
+                
+                parsed_partitions.append(parsed_partition)
+
+            leader = twin_config["round_configs"][round_num]["leader"][0]
+            parsed_leader = validators_list[ord(leader)-ord('A')]
+            msg_type = twin_config["round_configs"][round_num].get("MsgType","")
+            
+            timeout_msg_drop_cnt = twin_config.get("timeout_msg_drop_cnt",0)
+            parsed_config["round_configs"][int(round_num)] = {"leader": parsed_leader, "partitions": parsed_partitions, "MsgType":msg_type}
+        return parsed_config
+
+    def receive(msg = ('Liveness-Violation', liveness_round), from_=violation_checker):
+        print(f"Liveness Violated. Hence, Stopping Execution")
+        send(('Done',), to=violation_checker)
+        send(('Done',), to=(list(validators)+list(twins)))
+        send(('Done',), to=nw_playground)
+        send(('Done',), to=parent())
+        end(clients)
+    
+    def receive(msg = ('Safety-Violation',violation_round, validator), from_=violation_checker):
+        print(f"Safety Violated after round : {violation_round} at {validator}. Hence, Stopping Execution")
+        send(('Done',), to=violation_checker)
+        send(('Done',), to=(list(validators)+list(twins)))
+        send(('Done',), to=nw_playground)
+        send(('Done',), to=parent())
+        end(clients)
+
+
+def is_config_valid(config):
+    if int(config['nvalidators']) < (3 * int(config['nfaulty']) + 1):
+        print(
+            "Number of validators should be more than thrice of number of faulty validators.")
+        return False
+    if (int(config['nfaulty']) > int(config['exclude_size'])) or (int(config['exclude_size']) > 2 * int(config['nfaulty'])):
+        print(
+            "Exlude size should be between nfaulty and 2*nfaulty")
+        return False
+    return True
+
+
+def main():
+    import sys
+    
+    # if os.path.exists('../logs/') and os.path.isdir('../logs/'):
+    #     shutil.rmtree('../logs/')
+
+    # if os.path.exists('../ledgers/') and os.path.isdir('../ledgers/'):
+    #     shutil.rmtree('../ledgers/')
+    
+    config_id = sys.argv[1]
+    LOGGER.filename = '../logs/config' + str(config_id) + '/' \
+        + "ScenarioExecutor" + ".log"
+    
+    for config in configs:
+        
+        start = time.time()
+        p = new(ScenarioExecutor)
+        setup(p, (config, config_id, LOGGER))
+        start(p)
+        await(received(('Done',), from_=p))
+        print(f"Received Done from {p}")
+        end = time.time()
+        LOGGER.debug(f"Execution Time : {(end-start)}")
+        end(p)
